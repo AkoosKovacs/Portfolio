@@ -1,12 +1,38 @@
-app-root {
-  width: 100%;
-  height: 100%;
-}
-:host {
-  display: block;
+.office-wrapper {
   width: 100vw;
   height: 100vh;
-  background-image: url('../../../assets/img/iroda.svg');
-  background-size: cover;
-  background-position: center;
+  overflow-x: auto; /* csak mobilon scroll */
+  overflow-y: hidden;
+  position: relative;
+}
+
+/* Nagy kijelző */
+@media (min-width: 1200px) {
+  .office-wrapper {
+    overflow: hidden; /* nincs scroll */
+  }
+
+  .office-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* teljes viewport kitöltése */
+    display: block;
+  }
+}
+
+/* Mobil / kisebb képernyő */
+@media (max-width: 1199px) {
+  .office-image {
+    height: 100vh;
+    width: auto; /* arányos */
+    display: block;
+  }
+}
+
+.clockContainer {
+  position: absolute;
+  top: 5%; /* távolság a container tetejétől arányosan */
+  right: 5%; /* távolság a container jobb szélétől arányosan */
+  width: 10vw; /* a képernyő szélességének 10%-a */
+  aspect-ratio: 1; /* négyzet alakú marad */
 }
