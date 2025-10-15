@@ -1,0 +1,12 @@
+<div class="container" [class.enter]="hasEntered">
+  <div class="backDoor">
+    <div class="doorWrapper" [class.open]="isOpen" (click)="toggleDoor()">
+      <div class="doorFront">
+        <div id="nameSign" [style.visibility]="hideNameSign ? 'hidden' : 'visible'">
+          <div id="nevtablaNev">Kovács Ákos</div>
+          <div id="nevtablaFoglalkozas">Frontend fejlesztő</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

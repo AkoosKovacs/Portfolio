@@ -1,0 +1,121 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0);
+  width: min(40vw, 262px);
+  aspect-ratio: 262 / 488;
+  perspective: 1200px;
+  transition: transform 1s ease-in-out;
+}
+
+.container.enter {
+  transform: translate(-50%, -50%) translateZ(400px) scale(1.5);
+}
+
+.backDoor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1200px;
+  background-image: url('../../../assets/img/iroda.svg');
+  border: 17px solid rgb(83, 55, 27);
+  background-size: cover;
+  background-position: center;
+}
+
+.doorWrapper {
+  position: absolute;
+  top: -0.5px;
+  left: -0.5px;
+  width: calc(100% + 1.5px);
+  height: calc(100% + 1px);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &.open {
+    transform: rotateY(-120deg) translateZ(20px);
+  }
+}
+
+.doorFront {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/img/ajto.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+
+  transition: transform 1s;
+}
+
+#nameSign {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 10%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  text-align: center;
+  pointer-events: none;
+  z-index: 3;
+
+  background: linear-gradient(
+    145deg,
+    #d9d9d9 0%,
+    #f0f0f0 25%,
+    #c0c0c0 50%,
+    #f0f0f0 75%,
+    #d9d9d9 100%
+  );
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #aaa;
+  background-size: 200% 200%;
+  animation: shine 2s linear infinite;
+
+  #nevtablaNev {
+    font-size: 1vw; // a viewport szélességéhez arányos
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+
+  #nevtablaFoglalkozas {
+    font-size: 1vw; // a viewport szélességéhez arányos
+    color: #555;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* 3D belépés animáció */
+.container.enter .backDoor {
+  animation: enterRoom 1s forwards;
+}
+
+@keyframes enterRoom {
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  100% {
+    transform: translateZ(400px) scale(2.2);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
