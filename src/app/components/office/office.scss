@@ -56,6 +56,24 @@
   }
 }
 
+.trophyContainer {
+  position: absolute;
+  top: 52.6%;
+  left: 4.6%; /* vagy right: 10%; */
+  width: 15.4%;
+  height: 12.5%;
+  aspect-ratio: 1;
+  background-color: black;
+}
+
+.trophyImg {
+  position: absolute;
+  top: 10%;
+  left: 37%;
+  width: 35%;
+  height: auto;
+}
+
 /* Mobil / kisebb képernyő */
 @media (max-width: 1199px) {
   .office-image {
@@ -97,6 +115,24 @@
 
   .phoneImg {
     width: 100%;
+    height: auto;
+  }
+
+  .trophyContainer {
+    position: absolute;
+    top: 52%;
+    left: 16.5%; /* vagy right: 10%; */
+    width: 55.5%;
+    height: 10.1%;
+    aspect-ratio: 1;
+    background-color: black;
+  }
+
+  .trophyImg {
+    position: absolute;
+    top: 10%;
+    left: 37%;
+    width: 35%;
     height: auto;
   }
 }
