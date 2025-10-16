@@ -1,14 +1,26 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  ChangeDetectionStrategy,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-clock',
+  standalone: true,
   templateUrl: './clock.html',
   styleUrls: ['./clock.scss'],
 })
-export class ClockComponent implements AfterViewInit {
-  @ViewChild('canvas1') canvas!: ElementRef<HTMLCanvasElement>;
+export class ClockComponent implements OnInit, AfterViewInit {
+  @ViewChild('canvas1', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
   ctx!: CanvasRenderingContext2D;
   radius!: number;
+
+  ngOnInit(): void {
+    // Itt nem rajzolunk még, csak a canvas referenciát fogjuk meg
+  }
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d')!;
@@ -16,6 +28,8 @@ export class ClockComponent implements AfterViewInit {
     this.ctx.translate(this.radius, this.radius);
     this.radius = this.radius * 0.9;
 
+    // 💡 Rögtön indítsd el a rajzolást (nem setInterval után)
+    this.drawClock();
     setInterval(() => this.drawClock(), 1000);
   }
 

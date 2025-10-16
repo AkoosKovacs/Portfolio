@@ -13,26 +13,38 @@
   }
 
   .office-image {
+    position: relative;
     width: 100vw;
     height: 100vh;
     object-fit: cover; /* teljes viewport kitöltése */
     display: block;
+  }
+
+  .clockContainer {
+    position: absolute;
+    /* a % a kép arányához viszonyítva */
+    bottom: 80%; /* pl. a kép magasságának 20%-ánál */
+    left: 83%; /* pl. a kép szélességének 75%-ánál */
+    width: 10%; /* arányosan a képhez */
+    aspect-ratio: 1;
   }
 }
 
 /* Mobil / kisebb képernyő */
 @media (max-width: 1199px) {
   .office-image {
+    position: relative;
     height: 100vh;
     width: auto; /* arányos */
     display: block;
   }
-}
 
-.clockContainer {
-  position: absolute;
-  top: 5%; /* távolság a container tetejétől arányosan */
-  right: 5%; /* távolság a container jobb szélétől arányosan */
-  width: 10vw; /* a képernyő szélességének 10%-a */
-  aspect-ratio: 1; /* négyzet alakú marad */
+  .clockContainer {
+    position: absolute;
+    /* a % a kép arányához viszonyítva */
+    top: 8%; /* pl. a kép magasságának 20%-ánál */
+    left: 297%; /* pl. a kép szélességének 75%-ánál */
+    width: 10%; /* arányosan a képhez */
+    aspect-ratio: 1;
+  }
 }

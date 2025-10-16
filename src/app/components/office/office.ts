@@ -36,9 +36,4 @@ export class Office implements AfterViewInit {
       }
     }
   }
-
-  openMenu(menu: string) {
-    // Itt lehet majd kezelni a hotspotok kattintását
-    console.log('Megnyitva:', menu);
-  }
 }

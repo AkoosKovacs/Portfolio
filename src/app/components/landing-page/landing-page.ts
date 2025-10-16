@@ -17,6 +17,8 @@ export class LandingPage {
   toggleDoor() {
     this.isOpen = true;
 
+    import('../office/office').then(() => console.log('Office preloaded!'));
+
     // 1️⃣ Ajtó kinyílik
     setTimeout(() => {
       this.hideNameSign = true;
