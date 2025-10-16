@@ -28,6 +28,19 @@
     width: 10%; /* arányosan a képhez */
     aspect-ratio: 1;
   }
+
+  .calendarContainer {
+    position: absolute;
+    top: 26%;
+    left: 17.5%; /* vagy right: 10%; */
+    width: 5%;
+    aspect-ratio: 1;
+  }
+
+  .calendarImg {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Mobil / kisebb képernyő */
@@ -46,5 +59,18 @@
     left: 297%; /* pl. a kép szélességének 75%-ánál */
     width: 10%; /* arányosan a képhez */
     aspect-ratio: 1;
+  }
+
+  .calendarContainer {
+    position: absolute;
+    top: 30%;
+    left: 65%; /* vagy right: 10%; */
+    width: 17.5%;
+    aspect-ratio: 1;
+  }
+
+  .calendarImg {
+    width: 100%;
+    height: auto;
   }
 }
