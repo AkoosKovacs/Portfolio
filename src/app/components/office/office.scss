@@ -41,6 +41,19 @@
     width: 100%;
     height: auto;
   }
+
+  .phoneContainer {
+    position: absolute;
+    top: 54.5%;
+    left: 34.5%; /* vagy right: 10%; */
+    width: 6%;
+    aspect-ratio: 1;
+  }
+
+  .phoneImg {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Mobil / kisebb képernyő */
@@ -70,6 +83,19 @@
   }
 
   .calendarImg {
+    width: 100%;
+    height: auto;
+  }
+
+  .phoneContainer {
+    position: absolute;
+    top: 52.5%;
+    left: 122%; /* vagy right: 10%; */
+    width: 25%;
+    aspect-ratio: 1;
+  }
+
+  .phoneImg {
     width: 100%;
     height: auto;
   }
